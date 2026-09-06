@@ -1,0 +1,7 @@
+const evenOdd = (number) => number % 2 === 0 ? 'Even' : 'Odd';
+document.getElementById('checkBtn').addEventListener('click', () => { const value = Number(document.getElementById('number').value); document.getElementById('result').textContent = Number.isFinite(value) ? `${value} is ${evenOdd(value)}.` : 'Please enter a number.'; });
+const colors = ['#2563eb','#16a34a','#9333ea','#ea580c','#0891b2']; let colorIndex = 0;
+document.getElementById('colorBtn').addEventListener('click', (event) => { colorIndex = (colorIndex + 1) % colors.length; event.currentTarget.style.backgroundColor = colors[colorIndex]; });
+const calculate = (a,b,op) => { if (op === '+') return a+b; if (op === '-') return a-b; if (op === '*') return a*b; if (op === '/') return b === 0 ? 'Cannot divide by zero' : a/b; };
+document.getElementById('calcBtn').addEventListener('click', () => { const a=Number(document.getElementById('a').value), b=Number(document.getElementById('b').value), op=document.getElementById('operator').value; document.getElementById('calcResult').textContent = `Result: ${calculate(a,b,op)}`; });
+document.getElementById('date').textContent = new Date().toLocaleDateString(undefined,{weekday:'long',year:'numeric',month:'long',day:'numeric'});
